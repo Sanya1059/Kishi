@@ -35,8 +35,12 @@ body {
   height: 96px;
   margin: 0 auto 1.4rem auto;
   border-radius: 50%;
-  background: linear-gradient(135deg, #d9ff75 0%, #7ecf32 100%);
+  object-fit: cover;
   box-shadow: 0 16px 34px rgba(126, 207, 50, 0.22);
+}
+
+.avatar[src="avatar.jpg"] {
+  border: 2px solid rgba(126, 207, 50, 0.35);
 }
 
 .headline {
