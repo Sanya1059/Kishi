@@ -176,6 +176,23 @@ body {
   }
 }
 
+body.site-disabled .page-shell {
+  display: none !important;
+}
+
+body.site-disabled #disabled-overlay {
+  display: flex !important;
+}
+
+/* When JS sets site-enabled, hide the overlay and show content */
+body.site-enabled #disabled-overlay {
+  display: none !important;
+}
+
+body.site-enabled .page-shell {
+  display: block !important;
+}
+
 .disabled-message::before {
   content: "⛔";
   display: block;
