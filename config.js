@@ -1,6 +1,6 @@
 // Конфігурація сайту
 // Змініть isEnabled на false щоб деактивувати сайт
-window.config = {
-  isEnabled: false, // Встановіть на false для деактивації
+const config = {
+  isEnabled: true, // Встановіть на false для деактивації
   disabledMessage: 'Отключено програмистом'
 };
