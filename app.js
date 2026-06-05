@@ -1,25 +1,27 @@
 // Логіка для управління станом сайту
+function getSiteConfig() {
+  var cfg = window.config || {};
+  return {
+    isEnabled: typeof cfg.isEnabled === 'boolean' ? cfg.isEnabled : true,
+    disabledMessage: cfg.disabledMessage || 'Отключено программистом'
+  };
+}
+
 function checkSiteStatus() {
-  var isEnabled = config.isEnabled;
-  var disabledMessage = config.disabledMessage || 'Отключено програмистом';
-  
+  var config = getSiteConfig();
   var overlay = document.getElementById('disabled-overlay');
   var pageShell = document.querySelector('.page-shell');
   var disabledText = document.getElementById('disabled-text');
-  
-  if (isEnabled === false) {
-    // Приховуємо основний контент
+
+  if (config.isEnabled === false) {
     if (pageShell) {
       pageShell.style.display = 'none';
     }
-    
-    // Показуємо overlay з повідомленням
     if (overlay && disabledText) {
       overlay.style.display = 'flex';
-      disabledText.textContent = disabledMessage;
+      disabledText.textContent = config.disabledMessage;
     }
   } else {
-    // Сайт увімкнений - приховуємо overlay
     if (pageShell) {
       pageShell.style.display = 'block';
     }
